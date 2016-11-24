@@ -1,3 +1,14 @@
 <h1>
   {{title}}
 </h1>
+<b>
+Name: <input type="string" [(ngModel)]="name"> <br>
+Message: <input type="string" [(ngModel)]="message"> <br>
+</b>
+<button (click)="add()" >Send</button>
+<ul>
+  <li *ngFor="let msg of messages | async">
+    <h3>{{msg.name}}</h3>
+    <h2 style="margin-left:20px">{{msg.text}}</h2>
+  </li>
+</ul>
